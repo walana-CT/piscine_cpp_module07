@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyFind.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 10:23:59 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/20 11:24:09 by rficht           ###   ########.fr       */
+/*   Created: 2024/01/20 10:23:56 by rficht            #+#    #+#             */
+/*   Updated: 2024/01/20 16:32:02 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyFind.hpp"
+#include"easyFind.hpp"
 
-template <typename T>
-int easyFind(T cont, const int& val)
+int main()
 {
-	int it = std::find(cont.begin(), cont.end(), val);
+	int lst[] = {5, 2 ,6 ,3 ,7};
 
-	return it;
+	
+	std::list<int> cont1(lst, lst + sizeof(lst) / sizeof(int) );
+	std::vector<int> cont2(lst, lst + sizeof(lst) / sizeof(int) );
+
+
+	std::cout << "pos found: " <<  std::distance(cont1.begin(), easyFind(cont1, 15)) << std::endl;
+	std::cout << "pos found: " <<  std::distance(cont2.begin(), easyFind(cont2, 2)) << std::endl;
+	
+	return 0;
 }
