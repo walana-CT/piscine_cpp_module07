@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:48:57 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/22 10:57:02 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/26 09:08:26 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main()
 	std::cout << std::endl;
 	iter(arr2, 3, printTest);	
 	std::cout << std::endl;
+
+	
+	const int arr3[] = {1, 2, 3, 4, 5, 6};
+	iter(arr3, 6, printTestConst);
 
 	
 	return 0;

@@ -6,28 +6,33 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:32:29 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/23 16:54:28 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/26 09:27:58 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ARRAY_HPP
+# define  ARRAY_HPP
+
 #include <cstdlib>
 #include <iostream>
+#define MAX_VAL 750
 
 template <typename T>
 class Array
 {
 private:
 	T* 				elements;
-	size_t 			n;
+	unsigned int 			n;
 	
 public:
 	Array() : elements(new T[0]), n(0) {}
 	~Array() { delete[] elements; }
 
-	Array(const T& initialValue, size_t size) : elements(new T[size]), n(size)
+
+	Array(unsigned int size) : elements(new T[size]), n(size)
 	{
-		for (size_t i = 0; i < size; ++i) 
-			elements[i] = initialValue;
+		for (unsigned int i = 0; i < size; ++i) 
+			elements[i] = 0;
 	}
 
 	Array(const Array& rhs)
@@ -35,34 +40,38 @@ public:
 		*this = rhs;
 	}
 
-    T& operator[](size_t index) 
+	T& operator[](unsigned int index) 
 	{
-		if (index < this->n)
+		if (index < this->n || index <= 0)
 			return elements[index];
 		else 
 			throw std::out_of_range("Index out of range");
-    }
+	}
+
+	const T& operator[](unsigned int index) const
+	{
+		if (index < this->n || index <= 0)
+			return elements[index];
+		else 
+			throw std::out_of_range("Index out of range");
+	}
+
 
 	Array& operator = (const Array& rhs)
 	{
 		this->elements = new T[rhs.size()];
 		this->n = rhs.size();
-		for (size_t i = 0; i < this->n; ++i) 
-			elements[i] = rhs.getElem(i);
+		for (unsigned int i = 0; i < this->n; ++i) 
+			elements[i] = rhs[i];
 		return *this; 
 	}
 
-    size_t size() const
+	unsigned int size() const
 	{
-        return this->n;
+		return this->n;
 	}
 
-	const T& getElem(const size_t& index) const
-	{
-		if (index < this->n)
-			return elements[index];
-		else 
-			throw std::out_of_range("Index out of range");
-	}
 };
+
+#endif
 
