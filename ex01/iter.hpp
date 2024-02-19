@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:29:58 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/26 09:09:06 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/19 09:02:48 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,30 @@
 
 
 
-template < class T>
+template <class T>
 void printTestConst(const T elem)
 {
 	std::cout << elem << std::endl;
 }
 
-template < class T>
+template <class T>
 void printTest(T elem)
 {
 	std::cout << elem << std::endl;
 }
 
-template < class T>
-void iter(T* array, size_t n, void (f)(T array))
+
+template <class T>
+void constprintTest(const T elem)
+{
+	std::cout << elem << std::endl;
+}
+
+template <class T, class FUNC>
+void iter(T* array, size_t n, FUNC func)
 {
 	for (size_t i = 0; i < n; i++)
-		f(array[i]);
+		func(array[i]);
 }
 
 #endif

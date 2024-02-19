@@ -6,7 +6,7 @@
 #    By: rficht <rficht@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/20 09:23:49 by rficht            #+#    #+#              #
-#    Updated: 2024/01/23 15:17:09 by rficht           ###   ########.fr        #
+#    Updated: 2024/02/19 09:03:50 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ NAME = exercice02
 FLAGS = -Wall -Wextra -Werror
 
 # General compilation flags
-CFLAG = $(FLAGS)  $(INCLUDES) -std=c++98 -fsanitize=address -static-libasan
+CFLAG = $(FLAGS)  $(INCLUDES) -std=c++98 -fsanitize=address
  
 # Linking compilation flags
 GFLAG = -g3
@@ -53,7 +53,7 @@ SOURCES = $(FILES)
 OBJ = $(FILES:.cpp=.o)
 
 # Compiler used for this project
-CC = g++
+CC = c++
 
 # main rule called by default
 all: $(NAME)
