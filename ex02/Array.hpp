@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:32:29 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/26 09:27:58 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/19 08:34:22 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ template <typename T>
 class Array
 {
 private:
-	T* 				elements;
-	unsigned int 			n;
+	T* 						elements;
+	unsigned int			n;
 	
 public:
 	Array() : elements(new T[0]), n(0) {}
@@ -52,7 +52,7 @@ public:
 	{
 		if (index < this->n || index <= 0)
 			return elements[index];
-		else 
+		else
 			throw std::out_of_range("Index out of range");
 	}
 

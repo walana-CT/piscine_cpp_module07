@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:08:32 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/22 10:25:26 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/19 08:35:05 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main()
 {
 	int val1 = 5;
 	int val2 = 7;
-
 
 	std::cout << "val1: " << val1 << " val2: " << val2 << std::endl;
 	std::cout << "Swapping values" << std::endl;
@@ -39,8 +38,6 @@ int main()
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return 0;
-
 	
 	return 0;
 }
