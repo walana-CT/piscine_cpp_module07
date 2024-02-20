@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 09:59:30 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/22 10:23:09 by rficht           ###   ########.fr       */
+/*   Created: 2024/01/22 10:10:14 by rficht            #+#    #+#             */
+/*   Updated: 2024/02/20 15:34:52 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_HPP
-# define SWAP_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
+
+# include <iostream>
+
+template <class T> 
+const T& max(const T& a, const T& b)
+{	
+	return (b < a ) ? a : b;
+}
+
+template <class T> 
+const T& min(const T& a, const T& b)
+{	
+	return !(b <= a) ? a : b;
+}
 
 template <typename T>
 void swap(T& val1, T& val2)

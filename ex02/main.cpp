@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:45:05 by rficht            #+#    #+#             */
-/*   Updated: 2024/02/19 09:12:13 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:45:05 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 int main()
 {
 	Array<int> arr1 = Array<int>(10);
+	Array<int> arr2 = Array<int>(7);
 	Array<int> empty = Array<int>();
+	
+
 
 	arr1[0] = 4;
 	arr1[1] = 8;
@@ -27,7 +30,7 @@ int main()
 	arr1[8] = 4;
 	arr1[9] = 2;
 
-	Array<int> arr2 = arr1;
+	arr2 = arr1;
 
 	std::cout << arr2[0] <<  arr2[1] << arr2[2] << arr2[3] << arr2[4] << arr2[5] << arr2[6] << arr2[7] << arr2[8] << arr2[9] << std::endl;
 	
@@ -40,6 +43,10 @@ int main()
 		numbers[i] = value;
 		mirror[i] = value;
 	}
+
+
+	
+
 	//SCOPE
 	{
 		Array<int> tmp = numbers;

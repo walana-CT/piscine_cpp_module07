@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:32:29 by rficht            #+#    #+#             */
-/*   Updated: 2024/02/20 11:23:08 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:47:16 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,16 @@ public:
 			throw std::out_of_range("Index out of range");
 	}
 
-
 	Array& operator = (const Array& rhs)
 	{
 		if (this != &rhs)
 		{
 			if (this->elements)
-				delete elements;
+			{
+				delete [] elements;
+			}
 			
+
 			this->elements = new T[rhs.size()];
 			this->n = rhs.size();
 			for (unsigned int i = 0; i < this->n; ++i) 
