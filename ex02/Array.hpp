@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:32:29 by rficht            #+#    #+#             */
-/*   Updated: 2024/02/20 15:47:16 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:18:34 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 
 	Array(const Array& rhs)
 	{
+		this->elements = NULL;
 		*this = rhs;
 	}
 
@@ -55,21 +56,19 @@ public:
 
 	Array& operator = (const Array& rhs)
 	{
+
+		
 		if (this != &rhs)
 		{
-			if (this->elements)
-			{
+			if (elements)
 				delete [] elements;
-			}
-			
-
-			this->elements = new T[rhs.size()];
+	
+			this->elements = new T[rhs.size()]();
 			this->n = rhs.size();
 			for (unsigned int i = 0; i < this->n; ++i) 
-				elements[i] = rhs[i];			
+				elements[i] = rhs[i];
 		}
 		
-
 		return *this; 
 	}
 
