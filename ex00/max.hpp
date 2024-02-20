@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:07:59 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/22 10:22:44 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 11:12:13 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 template <class T> 
 const T& max(const T& a, const T& b)
 {	
-	return (b<a)?a:b;
+	return (b < a ) ? a : b;
 }
 
 #endif

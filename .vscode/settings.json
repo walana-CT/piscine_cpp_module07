@@ -49,6 +49,23 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp",
 		"bitset": "cpp",
-		"valarray": "cpp"
+		"valarray": "cpp",
+		"cstring": "cpp",
+		"ctime": "cpp",
+		"chrono": "cpp",
+		"codecvt": "cpp",
+		"complex": "cpp",
+		"condition_variable": "cpp",
+		"map": "cpp",
+		"set": "cpp",
+		"ratio": "cpp",
+		"iomanip": "cpp",
+		"mutex": "cpp",
+		"sstream": "cpp",
+		"thread": "cpp",
+		"cfenv": "cpp",
+		"cinttypes": "cpp",
+		"typeindex": "cpp",
+		"variant": "cpp"
 	}
 }

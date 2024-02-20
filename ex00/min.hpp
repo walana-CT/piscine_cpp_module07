@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:04:37 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/22 10:22:49 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 11:11:56 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 template <class T> 
 const T& min(const T& a, const T& b)
 {	
-	return !(b<a)?a:b;
+	return !(b <= a) ? a : b;
 }
 
 

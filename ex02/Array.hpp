@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:32:29 by rficht            #+#    #+#             */
-/*   Updated: 2024/02/19 08:34:22 by rficht           ###   ########.fr       */
+/*   Updated: 2024/02/20 11:23:08 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,8 @@ public:
 	~Array() { delete[] elements; }
 
 
-	Array(unsigned int size) : elements(new T[size]), n(size)
-	{
-		for (unsigned int i = 0; i < size; ++i) 
-			elements[i] = 0;
-	}
+	Array(unsigned int size) : elements(new T[size]()), n(size)
+	{}
 
 	Array(const Array& rhs)
 	{
@@ -42,7 +39,7 @@ public:
 
 	T& operator[](unsigned int index) 
 	{
-		if (index < this->n || index <= 0)
+		if (index < this->n)
 			return elements[index];
 		else 
 			throw std::out_of_range("Index out of range");
@@ -50,7 +47,7 @@ public:
 
 	const T& operator[](unsigned int index) const
 	{
-		if (index < this->n || index <= 0)
+		if (index < this->n)
 			return elements[index];
 		else
 			throw std::out_of_range("Index out of range");
@@ -59,10 +56,18 @@ public:
 
 	Array& operator = (const Array& rhs)
 	{
-		this->elements = new T[rhs.size()];
-		this->n = rhs.size();
-		for (unsigned int i = 0; i < this->n; ++i) 
-			elements[i] = rhs[i];
+		if (this != &rhs)
+		{
+			if (this->elements)
+				delete elements;
+			
+			this->elements = new T[rhs.size()];
+			this->n = rhs.size();
+			for (unsigned int i = 0; i < this->n; ++i) 
+				elements[i] = rhs[i];			
+		}
+		
+
 		return *this; 
 	}
 
